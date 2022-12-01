@@ -4,6 +4,7 @@ def main():
      
     calorias = Test1()
     print(calorias.darMaximoCalorias())
+    print(calorias.darSumatoriaMaximasCalorias())
 
 if __name__ == '__main__':
     main()
