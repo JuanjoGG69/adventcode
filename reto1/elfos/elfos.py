@@ -1,32 +1,22 @@
 class Test1:
     def __init__(self):
-        self.elfs = []
+        pass
 
-    def rellenar_datos(self):
+    def darMaximoCalorias(self):
+        suma = 0
+        self.maximo = 0
         with open('/home/juanjo/adventofcode/reto1/input.txt', 'r') as f:
             lista = []
             for linea in f:
                 if linea != '\n':
-                    lista.append(linea)
+                    lista.append(int(linea.rstrip()))
                 
                 else:
-                    self.elfs.append(lista)
+                    suma = sum(lista)
+                    if suma > self.maximo:
+                        self.maximo = suma
                     lista.clear()
+                    suma = 0
+        
+        return self.maximo
 
-    def Elfs(self):
-        return self.elfs
-
-    def obtener_mayor_calorias(self):
-        maximo = 0
-        suma = 0
-
-        for lista in self.elfs:
-            
-            for l in lista: 
-                suma += int(l)
-
-            if maximo < suma:
-                maximo = suma
-            suma = 0
-
-        return maximo
